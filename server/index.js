@@ -21,12 +21,30 @@ app.post("/api/register", async (req, res) => {
             email: req.body.email,
             password: req.body.password
         })
-        res.json({ statues: "ok" })
+        return res.json({ status: "ok" })
     }
 
     catch (err) {
         console.log(err)
-        res.json({ statues: "error", error: "Duplicate email" })
+        return res.json({ statue: "error", error: "Duplicate email" })
+    }
+
+})
+app.post("/api/user", async (req, res) => {
+    try {
+        const user = await User.findOne({
+            email: req.body.email,
+        })
+        user.name = req.body.name
+        user.email = req.body.email
+        user.password = req.body.password
+        user.save()
+        console.log(user)
+        return res.json({ status: "ok", user })
+    }
+    catch (err) {
+        console.log(err)
+        return res.json({ status: "error", error: err })
     }
 
 })

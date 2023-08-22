@@ -42,22 +42,22 @@ const Sidebar = () => {
           </h1>
         </div>
         <ul className="pt-6 flex flex-col gap-[1rem]">
-        <Link to="/dashboard"><li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-[50vw] h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+        <Link to="/dashboard"><li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
           Dashboard
         </li>
         </Link>
 
         <Link to= "/ledger">
-        <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-[50vw] h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+        <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
           Ledger Wallet
         </li>
         </Link>
 
-        <Link to="/settings"> <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-[50vw] h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+        <Link to="/settings"> <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
           Settings
         </li></Link>
 
-        <li className=" text-white  w-[50vw] h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+        <li className=" text-white  w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
           Logout
         </li>
         </ul>

@@ -36,27 +36,9 @@ import { useState } from "react";
       } catch (error) {
         console.log(error.response.data)
       }
-    
-        
-    //  const response = await fetch("http://localhost:10000/api/register", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name,
-    //       email,
-    //       password,
-    //     })
-    //   })
-
-      // const data = await response.json()
-     
-      // if (data.status === "ok") {
-      //   alert("login successful")
-      //   window.location.href = "/login"
-      // }
     }
+
+    
     return (
       <div>
        <div className=" flex items-center md:flex-row flex-col ">

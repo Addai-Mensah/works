@@ -1,52 +1,85 @@
-import React from 'react'
+import React, { useState } from 'react'
 import btc from "../../assets/btc.png"
 import metamask from "../../assets/metamask.png"
 import trustwallet from "../../assets/trustwallet.png"
 import Head from './head'
 import Dashboardtable from './dashboardtable'
-import Transaction from './transaction'
+import axios from 'axios' 
 import Layout from './Layout'
 
 function Settings() {
 
+    const [email, setemail] = useState("")
+    const [name, setname] = useState("")
+    const [password, setpassword] = useState("")
+
+    const [loading, setloading] = useState(false)
+
+    async function updateUser(event) {
+        event.preventDefault()
+        setloading(true)
+
+        try {
+            const res = await axios.post("http://localhost:10000/api/user", {
+                name,
+                email,
+                password,
+            })
+            console.log(res?.data)
+
+            alert("data updated successfully")
+            window.location.href = "/login"
+            setloading(false)
+
+        } catch (error) {
+            console.log(error?.response?.data)
+            setloading(false)
+
+        }
+    }
+
 
     return (
         <Layout>
-            <div className=''>
+            <div className='px-4'>
                 <Head title={"Settings"} />
-                <div className=' flex justify-center gap-5 flex-col md:flex-row'>
-                    <div className='md:w-[23rem]  w-[67vw] border-2 boxshadow  h-[8rem] flex  items-center '>
-                        <div className='flex gap-4  items-center justify-center ml-[1rem]'>
-                            <img src={btc} alt="bitcoin" />
-                            <div>
-                                <h1 className='text-[#00000090] text-[1rem] font-bold'>Bitcoin</h1>
-                                <h1 className='text-[#00000090] text-center font-bold'>Total $400</h1>
-                            </div>
+                <div className="w-screen">
+                    <form className="w-10/12 md:w-6/12 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">
+                                Username
+                            </label>
+                            <input value={name} onChange={(e) => setname(e.target.value)} type="text" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" placeholder="Username" />
                         </div>
-                    </div>
-
-                    <div className='md:w-[23rem] w-[67vw] border-2 boxshadow  h-[8rem] flex  items-center '>
-                        <div className='flex gap-4 items-center justify-center ml-[1rem]'>
-                            <img src={metamask} alt="metamask" />
-                            <div>
-                                <h1 className='text-[#00000090] text-[1rem] font-bold'>MetaMask</h1>
-                                <h1 className='text-[#00000090] text-center font-bold'>Total $800</h1>
-                            </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">
+                                Email
+                            </label>
+                            <input value={email} onChange={(e) => setemail(e.target.value)} type="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Email" />
                         </div>
-                    </div>
-
-                    <div className='md:w-[23rem] w-[67vw]  border-2 boxshadow  h-[8rem] flex  items-center '>
-                        <div className='flex gap-4 items-center justify-center ml-[1rem]'>
-                            <img className='w-[2.5rem]' src={trustwallet} alt="trustwallet" />
-                            <div>
-                                <h1 className='text-[#00000090] text-[1rem] font-bold'>Trust Wallet</h1>
-                                <h1 className='text-[#00000090] text-center font-bold'>Total $2000</h1>
-                            </div>
+                        <div className="mb-4">
+                            <label className="block text-gray-700 text-sm font-bold mb-2">
+                                Password
+                            </label>
+                            <input value={password} onChange={(e) => setpassword(e.target.value)} type="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Password" placeholder="Password" />
                         </div>
-                    </div>
+                        <div className="flex items-center justify-between">
+                            {
+                                loading ?
+                                    <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                                        loading
+                                    </a>
+                                    :
+                                    <button onClick={updateUser} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
+                                        Update
+                                    </button>
+                            }
+                        </div>
+                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                            Forgot Password?
+                        </a>
+                    </form>
                 </div>
-                <Transaction />
-                <Dashboardtable />
             </div>
         </Layout>
     )
