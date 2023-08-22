@@ -16,8 +16,8 @@ function Hero() {
 
             <div className='mt-[3rem] ml-[0.7rem] md:ml-0 '>
               <div className=''>
-                <h1 className='md:text-[3.5rem] md:w-[30rem] text-[2.9rem] font-[100]  '>Fastest & secure platform to invest in crypto.</h1>
-                <p className='md:w-[25rem] mt-[2rem] text-[1.2rem] font-[100]'>Buy and Sell cryptocurrency, trusted by 3M wallets with over $3billion in transactions.</p>
+                <h1 className='md:text-[3.5rem] md:w-[30rem] text-[2.9rem] font-[100] '>WELCOME TO DECENT NANO LEDGER</h1>
+                <p className='md:w-[25rem] mt-[2rem] text-[1.2rem] font-[100]'>Where all patriots are recommended to backup their digital assets and funds for the global event and blackout coming soon!</p>
                 <Link className="hover:no-underline" to="/signup"> <button className='rounded-full w-[12rem] h-[3rem] text-white bg-[#3b82f6] mt-[1.5rem]'>Get Started</button></Link>
               </div>
               

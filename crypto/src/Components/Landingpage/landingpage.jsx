@@ -7,7 +7,7 @@ import Managefunds from '../Homepage/managefunds'
 import Trackinvestment from '../Homepage/trackinvestment'
 import Footer from '../Homepage/footer'
 import Security from '../Homepage/security'
-
+import Why from '../Homepage/why'
 function Landingpage() {
   return (
     <div>
@@ -17,6 +17,7 @@ function Landingpage() {
         <Itworks/>
         <Managefunds/>
         <Trackinvestment/>
+        <Why/>
         <Security/>
         <Footer/>
     </div>
