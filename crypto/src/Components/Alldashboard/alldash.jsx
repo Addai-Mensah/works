@@ -10,7 +10,7 @@ function Alldash() {
   const navigate = useNavigate()
 
   async function populateDashboard(){
-    const req = await fetch("http://localhost:1337/api/dashboard", {
+    const req = await fetch("http://localhost:10000/api/dashboard", {
       headers: {
         "x-access-token":  localStorage.getItem("token")
       }

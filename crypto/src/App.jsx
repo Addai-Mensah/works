@@ -4,17 +4,17 @@ import Signup from './Components/Authentication/signup'
 import Login from './Components/Authentication/login'
 import Dashboardhome from './Components/Dashboard/dashboardhome'
 import {BrowserRouter as Router, Route, Routes} from  "react-router-dom"
-import Settings from './Components/Alldashboard/settings'
 import Ledger from './Components/Alldashboard/ledger'
 import Sidebar from './Components/Dashboard/sidebar'
+import Settings from './Components/Dashboard/settings'
 
 function App() {
   
   return (
     <Router>
 
-      <div className='flex md:gap-3 gap-2'>
-        <Sidebar/>
+      {/* <div className='flex md:gap-3 gap-2'> */}
+        {/* <Sidebar/> */}
       <Routes>
        <Route exact path = "/" element={<Landingpage/>} />
        <Route exact path = "/signup" element={<Signup/>} />
@@ -23,7 +23,7 @@ function App() {
         <Route exact path = "/ledger" element={<Ledger/>} />
         <Route exact path = "/settings" element={<Settings/>} />
       </Routes>
-      </div>
+      {/* </div> */}
 
 
 

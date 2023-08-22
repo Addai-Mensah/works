@@ -8,7 +8,8 @@ import {
   import abstracts from "../../assets/bg.png"
   import { Link } from 'react-router-dom'
   import {useNavigate} from 'react-router-dom'
-  import { useState } from "react";
+import { useState } from "react";
+  import axios from "axios";
    
   export default function Signup() {
 
@@ -21,24 +22,40 @@ import {
 
     async function registerUser(event) {
       event.preventDefault()
-     const response = await fetch("http://localhost:1337/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: ({
+
+      try {
+        const res = await axios.post("http://localhost:10000/api/register", {
           name,
           email,
           password,
         })
-      })
-
-      const data = await response.json()
-     
-      if (data.status === "ok") {
+        console.log(res.data)
+        
         alert("login successful")
         window.location.href = "/login"
+      } catch (error) {
+        console.log(error.response.data)
       }
+    
+        
+    //  const response = await fetch("http://localhost:10000/api/register", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       name,
+    //       email,
+    //       password,
+    //     })
+    //   })
+
+      // const data = await response.json()
+     
+      // if (data.status === "ok") {
+      //   alert("login successful")
+      //   window.location.href = "/login"
+      // }
     }
     return (
       <div>
