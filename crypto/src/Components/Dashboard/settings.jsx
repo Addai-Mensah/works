@@ -8,12 +8,16 @@ import axios from 'axios'
 import Layout from './Layout'
 
 function Settings() {
+    const user = JSON.parse(sessionStorage.getItem('user'))
 
-    const [email, setemail] = useState("")
-    const [name, setname] = useState("")
+    const [email, setemail] = useState(user?.email ?? "")
+    const [name, setname] = useState(user?.name ?? "")
     const [password, setpassword] = useState("")
 
     const [loading, setloading] = useState(false)
+
+
+    
 
     async function updateUser(event) {
         event.preventDefault()

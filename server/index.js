@@ -37,7 +37,9 @@ app.post("/api/user", async (req, res) => {
         })
         user.name = req.body.name
         user.email = req.body.email
-        user.password = req.body.password
+        if (req.body.password) {
+            user.password = req.body.password
+        }
         user.save()
         console.log(user)
         return res.json({ status: "ok", user })
