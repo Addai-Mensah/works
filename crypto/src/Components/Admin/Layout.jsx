@@ -17,7 +17,7 @@ function Layout({ children, ...restProps }) {
           <div className="h-screen bg-red-400">
               <Sidebar/>
           </div>
-          <div className="h-screen overflow-auto pl-2">
+          <div className="h-screen overflow-auto pl-2 w-full">
               {
                   children
               }

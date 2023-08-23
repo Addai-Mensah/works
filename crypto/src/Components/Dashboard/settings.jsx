@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import btc from "../../assets/btc.png"
-import metamask from "../../assets/metamask.png"
-import trustwallet from "../../assets/trustwallet.png"
 import Head from './head'
-import Dashboardtable from './dashboardtable'
 import axios from 'axios' 
 import Layout from './Layout'
 import { UfWidget } from "@uploadfly/react-widget";

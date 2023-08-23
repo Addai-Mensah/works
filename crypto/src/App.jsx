@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Routes} from  "react-router-dom"
 import Ledger from './Components/Alldashboard/ledger'
 import Sidebar from './Components/Dashboard/sidebar'
 import Settings from './Components/Dashboard/settings'
+import AdminDashboardhome from './Components/Admin/dashboardhome'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
        <Route exact path = "/signup" element={<Signup/>} />
        <Route exact path = "/login" element={<Login/>} />
        <Route exact path = "/dashboard" element={<Dashboardhome/>} />
+        <Route exact path="/maindashboard" element={<AdminDashboardhome/>} />
         <Route exact path = "/ledger" element={<Ledger/>} />
         <Route exact path = "/settings" element={<Settings/>} />
       </Routes>
