@@ -1,7 +1,7 @@
 import React from 'react'
-import register from "../../assets/signup.png"
+import register from "../../assets/reliable.png"
 import add from "../../assets/add.png"
-import secure from "../../assets/secure.png"
+import secure from "../../assets/securityy.png"
 function Why() {
   return (
     <div>
@@ -21,13 +21,13 @@ function Why() {
           </div>
 
           <div className='w-[20rem] bg-[#e5e7eb] md:h-[25rem] h-[25rem]  rounded-lg'>
-            <img className='rounded-full w-[6rem] mx-auto mt-[3rem] ' src={add} alt="" />
+            <img className='rounded-full w-[6rem] mx-auto mt-[2rem] ' src={secure} alt="" />
             <h1 className='text-center my-[1.5rem]  font-bold text-[1.5rem]'>Safe and Secure</h1>
             <p className=' text-center  text-[1.2rem] px-[2%] '>Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business. We are legal and safe.</p>
           </div>
 
           <div className='w-[20rem] bg-[#e5e7eb] md:h-[25rem] h-[25rem] rounded-lg'>
-            <img className='rounded-full w-[7rem] mx-auto mt-[4rem] ' src={secure} alt="" />
+            <img className='rounded-full w-[7rem] mx-auto mt-[1.6rem] ' src={secure} alt="" />
             <h1 className='text-center my-[1.5rem]  font-bold text-[1.5rem]'>Priority Service</h1>
             <p className=' text-center   text-[1.2rem] px-[2%] '>We provide 24/7 customer support through email and telegram. Our support representatives are pefriodically available to help you through any difficulty</p>
           </div>
