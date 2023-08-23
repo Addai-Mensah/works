@@ -9,8 +9,8 @@ function Hero() {
            <div>
            <div>
                 <div className='md:w-[27rem] w-[20rem] bg-[#e2e8f0] h-[2.7rem] rounded-full flex md:gap-16 items-center justify-center  '>
-                <button className='bg-[#ffff] w-[7rem]  h-[2rem] rounded-full text-[0.9rem] font-extralight'>  Crappo </button>
-                    <h3 className='pl-[1.2rem] font-[100]'>Stay protected</h3>          
+                <button className='bg-[#ffff] w-[9rem]  h-[2rem] rounded-full text-[0.9rem] font-extralight'>  Decent Nana Ledger </button>
+                    <h3 className='pl-[1.2rem] font-[100]'>Smart investment</h3>          
                 </div>
             </div>
 
