@@ -16,7 +16,7 @@ function Itworks() {
         <div className='flex items-center justify-center mt-[3rem] md:flex-row gap-3 flex-col md:ml-0 ml-[2rem]  '>
           <div className='w-[20rem] bg-[#3671e9] md:h-[25rem] h-[25rem]  rounded-lg'>
             <img className='rounded-full w-[6rem] mx-auto mt-[3rem] ' src={register} alt="" />
-            <h1 className='text-center my-[1.5rem] text-white font-bold text-[1.5rem]'>Step 1</h1>
+            <h1 className='text-center my-[1.5rem] text-white font-bold text-[1.5rem]'>Account</h1>
             <p className=' text-center text-white  text-[1.2rem] px-[2%] '>Create an account with us to get started with securing your funds with us</p>
           </div>
 
@@ -29,7 +29,7 @@ function Itworks() {
           <div className='w-[20rem] bg-[#e5e7eb] md:h-[25rem] h-[25rem] rounded-lg'>
             <img className='rounded-full w-[7rem] mx-auto mt-[4rem] ' src={secure} alt="" />
             <h1 className='text-center my-[1.5rem]  font-bold text-[1.5rem]'>Secured</h1>
-            <p className=' text-center   text-[1.2rem] px-[2%] '>Create an account with us to get started with securing your funds with us</p>
+            <p className=' text-center   text-[1.2rem] px-[2%] '>We conduct legal activities in the legal field. We are certified to operate investment business.</p>
           </div>
         </div>
         </div>
