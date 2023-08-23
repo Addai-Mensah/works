@@ -74,6 +74,26 @@ app.post("/api/user", async (req, res) => {
     }
 
 })
+app.get("/api/users", async (req, res) => {
+    try {
+        const user = await User.find()
+        const filteredUsers = user.map(user => {
+            return {
+                name: user.name,
+                email: user.email,
+                profilePic: user.profilePic
+            }
+        })
+            
+        return res.json({ status: "ok",  users: filteredUsers  })
+    }
+    catch (err) {
+        console.log(err)
+        return res.json({ status: "error", error: err })
+    }
+
+})
+
 app.post("/api/user/profile", async (req, res) => {
     try {
         const user = await User.findOne({
