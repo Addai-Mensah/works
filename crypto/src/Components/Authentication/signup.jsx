@@ -42,9 +42,9 @@ import { useState } from "react";
     return (
       <div>
        <div className=" flex items-center md:flex-row flex-col ">
-       <div className=" md:w-2/4 w-full h-[30vh] md:h-[100vh] bg-no-repeat"   style={{backgroundImage: `url(${abstracts})`}}>
-        <h1 className="text-white font-bolder text-[1.8rem] md:w-[25rem] w-[20rem] md:ml-[3rem] ml-[3rem] md:mt-[15rem] mt-[5rem] ">Secure your crypto? Crappo is the way to go!</h1>
-        <p  className="text-white  text-[0.9rem] md:w-[25rem] ml-[3rem]">Safeguard your crypto no compromise</p>
+       <div className=" md:w-2/4 w-full h-[40vh] md:h-[100vh] bg-no-repeat"   style={{backgroundImage: `url(${abstracts})`}}>
+        <h1 className="text-white font-bolder text-[1.8rem] md:w-[25rem] w-[20rem] md:ml-[3rem] ml-[3rem] md:mt-[15rem] mt-[5rem] ">Invest your crypto assets? Decent Nano Ledger is you go to!</h1>
+        <p  className="text-white  text-[0.9rem] md:w-[25rem] ml-[3rem]">Tokenize success, optimize returns</p>
        </div>
 
 

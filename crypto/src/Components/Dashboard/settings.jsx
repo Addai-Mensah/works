@@ -52,7 +52,15 @@ function Settings() {
             })
             console.log(res?.data)
 
-            alert("profilePic updated successfully")
+            Swal.fire({
+                title: 'Profile picture updated',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
             setloading(false)
 
         } catch (error) {

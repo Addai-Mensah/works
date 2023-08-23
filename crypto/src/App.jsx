@@ -4,7 +4,7 @@ import Signup from './Components/Authentication/signup'
 import Login from './Components/Authentication/login'
 import Dashboardhome from './Components/Dashboard/dashboardhome'
 import {BrowserRouter as Router, Route, Routes} from  "react-router-dom"
-import Ledger from './Components/Alldashboard/ledger'
+import Ledger from './Components/Dashboard/ledger'
 import Sidebar from './Components/Dashboard/sidebar'
 import Settings from './Components/Dashboard/settings'
 
