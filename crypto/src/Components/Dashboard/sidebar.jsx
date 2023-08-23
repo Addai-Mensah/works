@@ -16,9 +16,8 @@ const Sidebar = () => {
   return (
     <div className="flex h-full">
       <div
-        className={`  ${
-          open ? "w-72" : "w-20 "
-        } bg-dark-purple  p-5 h-auto  pt-8 relative duration-300`}
+        className={`  ${open ? "w-72" : "w-20 "
+          } bg-dark-purple  p-5 h-auto  pt-8 relative duration-300`}
       >
         <img
           src="./src/assets/control.png"
@@ -29,40 +28,44 @@ const Sidebar = () => {
         <div className="flex gap-x-4 items-center">
           <img
             src="./src/assets/logo.png"
-            className={`cursor-pointer duration-500 ${
-              open && "rotate-[360deg]"
-            }`}
+            className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"
+              }`}
           />
           <h1
-            className={`text-white origin-left font-bold text-xl duration-200 ${
-              !open && "scale-0"
-            }`}
+            className={`text-white origin-left font-bold text-xl duration-200 ${!open && "scale-0"
+              }`}
           >
             Dashboard
           </h1>
         </div>
         <ul className="pt-6 flex flex-col gap-[1rem]">
-        <Link to="/dashboard"><li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
-          Dashboard
-        </li>
-        </Link>
+          <Link to="/dashboard"><li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+            Dashboard
+          </li>
+          </Link>
 
-        <Link to= "/ledger">
-        <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
-          Ledger Wallet
-        </li>
-        </Link>
+          <Link to="/ledger">
+            <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+              Ledger Wallet
+            </li>
+          </Link>
 
-        <Link to="/settings"> <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
-          Settings
-        </li></Link>
+          <Link to="/settings"> <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
+            Settings
+          </li></Link>
 
-        <li className=" text-white  w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
-          Logout
-        </li>
+          <li className=" text-white  w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg" onClick={() => {
+            if (window.confirm("Are you sure you want to logout?")) {
+              localStorage.clear()
+              sessionStorage.clear()
+              window.location.href = "/"
+            }
+          }}>
+            Logout
+          </li>
         </ul>
       </div>
-      
+
     </div>
   );
 };

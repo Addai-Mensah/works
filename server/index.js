@@ -30,6 +30,31 @@ app.post("/api/register", async (req, res) => {
     }
 
 })
+
+// Update existing records to include the new field
+async function updateRecords() {
+    try {
+        const recordsToUpdate = await User.find({ newField: { $exists: false } });
+
+        for (const record of recordsToUpdate) {
+            record.profilePic = ''; // Set the default value for the new field
+            await record.save();
+        }
+
+        console.log('Data migration completed.');
+    } catch (error) {
+        console.error('Error during data migration:', error);
+    } finally {
+        mongoose.disconnect();
+    }
+}
+
+// updateRecords();
+
+
+
+
+
 app.post("/api/user", async (req, res) => {
     try {
         const user = await User.findOne({
@@ -41,8 +66,23 @@ app.post("/api/user", async (req, res) => {
             user.password = req.body.password
         }
         user.save()
-        console.log(user)
-        return res.json({ status: "ok", user })
+        return res.json({ status: "ok", user: { ...user, password: undefined } })
+    }
+    catch (err) {
+        console.log(err)
+        return res.json({ status: "error", error: err })
+    }
+
+})
+app.post("/api/user/profile", async (req, res) => {
+    try {
+        const user = await User.findOne({
+            email: req.body.email,
+        })
+        user.profilePic = req.body.profilePic
+
+        user.save()
+        return res.json({ status: "ok", user: { ...user,password:undefined } })
     }
     catch (err) {
         console.log(err)
@@ -64,7 +104,7 @@ app.post("/api/login", async (req, res) => {
             email: user.email
         }, process.env.jwtToken)
 
-        return res.json({ status: "ok", token, user })
+        return res.json({ status: "ok", token, user: { ...user, password: undefined } })
 
     } catch (error) {
         return res.json({ status: "error", error })
