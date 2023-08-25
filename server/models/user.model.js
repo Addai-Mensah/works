@@ -6,6 +6,11 @@ const userCoinSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+
+    logo: {
+        type: String,default:"null"
+    },
+
     balance: {
         type: Number,
         default: 0,
@@ -21,6 +26,7 @@ const User = new mongoose.Schema({
     quote: {type: String},
     number: { type: String },
     coins: [userCoinSchema],
+    
 
 }, {collection: "user-data"})
 

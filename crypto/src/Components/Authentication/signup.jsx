@@ -9,33 +9,55 @@ import {
   import { Link } from 'react-router-dom'
   import {useNavigate} from 'react-router-dom'
 import { useState } from "react";
-  import axios from "axios";
+import axios from "axios";
+import Swal from 'sweetalert2'
    
   export default function Signup() {
 
     const navigate = useNavigate()
 
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
 
     async function registerUser(event) {
       event.preventDefault()
-
-      try {
-        const res = await axios.post("http://localhost:10000/api/register", {
-          name,
-          email,
-          password,
-        })
-        console.log(res.data)
-        
-        alert("login successful")
-        window.location.href = "/login"
-      } catch (error) {
-        console.log(error.response.data)
+      if (name.length == 0 || email.length == 0 || password.length == 0) {
+        setError(true)
       }
+
+      else{
+        try {
+          const res = await axios.post("http://localhost:10000/api/register", {
+            name,
+            email,
+            password,
+          })
+          console.log(res.data)
+          
+          Swal.fire({
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            },
+            icon: 'success',
+            title: 'Signup Success',
+            showConfirmButton: false,
+            timer: 2500
+          })
+     
+          window.location.href = "/login"
+        }
+
+        catch (error) {
+          console.log(error.response.data)
+        }
+      }
+       
     }
 
     
@@ -43,7 +65,7 @@ import { useState } from "react";
       <div>
        <div className=" flex items-center md:flex-row flex-col ">
        <div className=" md:w-2/4 w-full h-[40vh] md:h-[100vh] bg-no-repeat"   style={{backgroundImage: `url(${abstracts})`}}>
-        <h1 className="text-white font-bolder text-[1.8rem] md:w-[25rem] w-[20rem] md:ml-[3rem] ml-[3rem] md:mt-[15rem] mt-[5rem] ">Invest your crypto assets? Decent Nano Ledger is you go to!</h1>
+        <h1 className="text-white font-bolder text-[1.8rem] md:w-[25rem] w-[20rem] md:ml-[3rem] ml-[3rem] md:mt-[15rem] mt-[5rem] ">Unlock the Future of Wealth with  Decent Nano </h1>
         <p  className="text-white  text-[0.9rem] md:w-[25rem] ml-[3rem]">Tokenize success, optimize returns</p>
        </div>
 
@@ -63,16 +85,25 @@ import { useState } from "react";
            onChange={(e) => setName(e.target.value)}
            type="text"
           />
+           {error && name.length <=0? 
+            <span className='text-[red] mt-[-1.3rem] text-[0.8rem]'>Name can't be empty</span>: ""
+            }
           <Input size="lg" label="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
           />
+           {error && email.length <=0? 
+            <span className='text-[red] mt-[-1.3rem] text-[0.8rem]'>Email can't be empty</span>: ""
+            }
           <Input  size="lg" label="Password" 
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           />
+           {error && password.length <=0? 
+            <span className='text-[red] mt-[-1.3rem] text-[0.8rem]'>Passward can't be empty</span>: ""
+            }
         </div>
 
         <input className="mt-6 bg-[#3F7AEE] py-[0.2rem] text-white w-[7rem] rounded-lg" type="submit" value="Register" />

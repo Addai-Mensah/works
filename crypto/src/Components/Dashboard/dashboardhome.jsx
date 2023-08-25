@@ -15,13 +15,13 @@ function Dashboardhome() {
       <Layout>
          <div>
             <Head />
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                {
                   user?._doc?.coins?.length > 0 ? 
                      user?._doc?.coins?.map((item) => (
                         <div className='col-span-1 border-2 boxshadow  h-[8rem] flex  items-center '>
                            <div className='flex gap-4  items-center justify-center ml-[1rem]'>
-                              <img src={btc} alt="bitcoin" />
+                              <img src={item.logo} alt="logo" />
                               <div>
                                  <h1 className='text-[#00000090] text-[1rem] font-bold'>{item?.coinType}</h1>
                                  <h1 className='text-[#00000090] text-center font-bold'>Balance  : ${item?.balance}</h1>

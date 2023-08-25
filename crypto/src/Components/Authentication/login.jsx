@@ -16,10 +16,17 @@ function Login() {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState(false);
 
 
   async function loginUser(event) {
     event.preventDefault()
+
+    if( email.length == 0 ||  password.length == 0  ){
+      setError(true)
+    }
+
+   
     const response = await fetch("http://localhost:10000/api/login", {
       method: "POST",
       headers: {
@@ -78,11 +85,17 @@ function Login() {
                   onChange={(e) => setEmail(e.target.value)}
                   type="text"
                 />
+                 {error && email.length <=0? 
+            <span className='text-[red] mt-[-1.3rem] text-[0.8rem]'>Email can't be empty</span>: ""
+            }
                 <Input size="lg" label="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                 />
+                 {error && password.length <=0? 
+            <span className='text-[red] mt-[-1.3rem] text-[0.8rem]'>Passward can't be empty</span>: ""
+            }
               </div>
 
               <input className="mt-6 bg-[#3F7AEE] py-[0.2rem] text-white w-[7rem] rounded-lg" type="submit" value="Login" />

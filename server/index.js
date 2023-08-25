@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose")
 const User = require("./models/user.model")
+// const Admin = requre("./models/admin.models.js")
 const jwt = require("jsonwebtoken")
 require('dotenv').config()
 
@@ -23,7 +24,7 @@ app.post("/api/register", async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            coins: [{ coinType: 'SLM', balance: 0 }, { coinType: 'SRM', balance: 0 }, { coinType: 'SDC', balance: 0 }, { coinType: 'TRON', balance: 0 }, { coinType: 'SOLANA', balance: 0 }, { coinType: 'XRP', balance: 0 }],
+            coins: [{ coinType: 'SLM', logo:'https://images.app.goo.gl/jjzNR6Uvd8hkqiuT7', balance: 0 }, { coinType: 'SRM', logo:'https://images.app.goo.gl/wGNoZRNJ3sxVU3zz6', balance: 0 }, { coinType: 'SDC', logo:'https://images.app.goo.gl/rSkWNoscdWfjCaY68', balance: 0 }, { coinType: 'TRON',logo:'https://images.app.goo.gl/snErhHZLZEBi79fy6', balance: 0 }, { coinType: 'SOLANA', logo:'https://images.app.goo.gl/YeD1mvjQyLFxgrq59', balance: 0 }, { coinType: 'XRP', logo:'https://images.app.goo.gl/Qb1mjG5vjcPLZNdX8', balance: 0 }],
         })
         return res.json({ status: "ok" })
     }
@@ -35,6 +36,22 @@ app.post("/api/register", async (req, res) => {
 
 })
 
+
+// app.post("/api/admin/login", async (req, res) => {
+//     try {
+//         await Admin.create({
+//             name: req.body.name,
+//             email: req.body.email,
+//         })
+//         return res.json({ status: "ok" })
+//     }
+
+//     catch (err) {
+//         console.log(err)
+//         return res.json({ statue: "error", error: "Duplicate email" })
+//     }
+
+// })
 
 app.put("/api/coins/:id", async (req, res) => {
     try {

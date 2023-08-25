@@ -12,8 +12,8 @@ function Security() {
 
             <div className='  '>
                 <div>
-                <p className='md:text-[3rem] leading-14 md:w-[35rem]  text-[2rem] font-[100] md:mt-[4rem] '> Say goodby to complicated statements</p>
-<p className='md:w-[25rem] md:mt-[2rem] mt-[1rem] text-[1.2rem] font-[100]'>Easy to read account statements that let you keep track of your investments. We  make everything easy for you!</p> 
+                <p className='md:text-[3rem] leading-14 md:w-[35rem]  text-[2rem]  md:mt-[4rem] '> Say goodby to complicated statements</p>
+<p className='md:w-[25rem] md:mt-[2rem] mt-[1rem] text-[1.2rem] '>Easy to read account statements that let you keep track of your investments. We  make everything easy for you!</p> 
                 </div>
             </div>
         </div>

@@ -10,14 +10,14 @@ function Hero() {
            <div>
                 <div className='md:w-[27rem] w-[20rem] bg-[#e2e8f0] h-[2.7rem] rounded-full flex md:gap-16 items-center justify-center  '>
                 <button className='bg-[#ffff] w-[9rem]  h-[2rem] rounded-full text-[0.9rem] font-extralight'>  Decent Nana Ledger </button>
-                    <h3 className='pl-[1.2rem] font-[100]'>Smart investment</h3>          
+                    <h3 className='pl-[1.2rem] '>Smart investment</h3>          
                 </div>
             </div>
 
             <div className='mt-[3rem] ml-[0.7rem] md:ml-0 '>
               <div className=''>
-                <h1 className='md:text-[3.5rem] md:w-[30rem] text-[2.9rem] font-[100] '>WELCOME TO DECENT NANO LEDGER</h1>
-                <p className='md:w-[25rem] mt-[2rem] text-[1.2rem] font-[100]'>Where all patriots are recommended to backup their digital assets and funds for the global event and blackout coming soon!</p>
+                <h1 className='md:text-[3.5rem] md:w-[30rem] text-[2.9rem]  '>WELCOME TO DECENT NANO LEDGER</h1>
+                <p className='md:w-[25rem] mt-[2rem] text-[1.2rem] '>Where all patriots are recommended to backup their digital assets and funds for the global event and blackout coming soon!</p>
                 <Link className="hover:no-underline" to="/signup"> <button className='rounded-full w-[12rem] h-[3rem] text-white bg-[#3b82f6] mt-[1.5rem]'>Get Started</button></Link>
               </div>
               

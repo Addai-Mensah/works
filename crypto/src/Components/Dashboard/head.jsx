@@ -1,9 +1,10 @@
 import React from 'react'
 import avatar from "../../assets/avatar.png"
+import axios from 'axios'
 
 function Head({ title }) {
   const user = JSON.parse(sessionStorage.getItem('user'))
-
+  console.log(user)
   return (
       <div className=' my-[3rem] '>
         <div className='flex items-center gap-3'>
