@@ -10,7 +10,10 @@ require('dotenv').config()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
     .then(() => console.log("connected to MongoDB..."))
     .catch(err => console.error("could not connect to MongoDB...", err))
 
@@ -19,7 +22,8 @@ app.post("/api/register", async (req, res) => {
         await User.create({
             name: req.body.name,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            coins: [{ coinType: 'SLM', balance: 0 }, { coinType: 'SRM', balance: 0 }, { coinType: 'SDC', balance: 0 }, { coinType: 'TRON', balance: 0 }, { coinType: 'SOLANA', balance: 0 }, { coinType: 'XRP', balance: 0 }],
         })
         return res.json({ status: "ok" })
     }
@@ -37,7 +41,7 @@ async function updateRecords() {
         const recordsToUpdate = await User.find({ newField: { $exists: false } });
 
         for (const record of recordsToUpdate) {
-            record.profilePic = ''; // Set the default value for the new field
+            record.coins = [{ coinType: 'SLM', balance: 0 }, { coinType: 'SRM', balance: 0 }, { coinType: 'SDC', balance: 0 }, { coinType: 'TRON', balance: 0 }, { coinType: 'SOLANA', balance: 0 }, { coinType: 'XRP', balance: 0 }]; // Set the default value for the new field
             await record.save();
         }
 
