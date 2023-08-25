@@ -9,43 +9,34 @@ import Layout from './Layout'
 
 function Dashboardhome() {
 
-
+   const user = JSON.parse(sessionStorage.getItem('user'))
+   
    return (
       <Layout>
          <div>
             <Head />
-            <div className=' flex justify-center gap-5 flex-col md:flex-row'>
-               <div className='md:w-[23rem]  w-[67vw] border-2 boxshadow  h-[8rem] flex  items-center '>
-                  <div className='flex gap-4  items-center justify-center ml-[1rem]'>
-                     <img src={btc} alt="bitcoin" />
-                     <div>
-                        <h1 className='text-[#00000090] text-[1rem] font-bold'>Bitcoin</h1>
-                        <h1 className='text-[#00000090] text-center font-bold'>Total $400</h1>
-                     </div>
-                  </div>
-               </div>
+            <div className='grid grid-cols-2 md:grid-cols-3 gap-5'>
+               {
+                  user?._doc?.coins?.length > 0 ? 
+                     user?._doc?.coins?.map((item) => (
+                        <div className='col-span-1 border-2 boxshadow  h-[8rem] flex  items-center '>
+                           <div className='flex gap-4  items-center justify-center ml-[1rem]'>
+                              <img src={btc} alt="bitcoin" />
+                              <div>
+                                 <h1 className='text-[#00000090] text-[1rem] font-bold'>{item?.coinType}</h1>
+                                 <h1 className='text-[#00000090] text-center font-bold'>Balance  : ${item?.balance}</h1>
+                              </div>
+                           </div>
+                        </div>
+                     ))
+                     : 
+                     <h1>loading ...</h1>
+               }
+             
 
-               <div className='md:w-[23rem] w-[67vw] border-2 boxshadow  h-[8rem] flex  items-center '>
-                  <div className='flex gap-4 items-center justify-center ml-[1rem]'>
-                     <img src={metamask} alt="metamask" />
-                     <div>
-                        <h1 className='text-[#00000090] text-[1rem] font-bold'>MetaMask</h1>
-                        <h1 className='text-[#00000090] text-center font-bold'>Total $800</h1>
-                     </div>
-                  </div>
-               </div>
-
-               <div className='md:w-[23rem] w-[67vw]  border-2 boxshadow  h-[8rem] flex  items-center '>
-                  <div className='flex gap-4 items-center justify-center ml-[1rem]'>
-                     <img className='w-[2.5rem]' src={trustwallet} alt="trustwallet" />
-                     <div>
-                        <h1 className='text-[#00000090] text-[1rem] font-bold'>Trust Wallet</h1>
-                        <h1 className='text-[#00000090] text-center font-bold'>Total $2000</h1>
-                     </div>
-                  </div>
-               </div>
+            
             </div>
-            <Transaction />
+            {/* <Transaction /> */}
             <Dashboardtable />
          </div>
       </Layout>

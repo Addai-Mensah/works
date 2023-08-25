@@ -35,6 +35,26 @@ app.post("/api/register", async (req, res) => {
 
 })
 
+
+app.put("/api/coins/:id", async (req, res) => {
+    try {
+
+        const user = await User.findById(req.params.id)
+
+        user.coins = req.body.coins
+        user.save()
+        return res.json({ status: "ok", user: { ...user, password: undefined } })
+    }
+    catch (err) {
+        console.log(err)
+        return res.json({ status: "error", error: err })
+    }
+
+}
+)
+
+
+
 // Update existing records to include the new field
 async function updateRecords() {
     try {
@@ -83,19 +103,27 @@ app.get("/api/users", async (req, res) => {
         const user = await User.find()
         const filteredUsers = user.map(user => {
             return {
-                name: user.name,
-                email: user.email,
-                profilePic: user.profilePic
+                ...user,
+                password: undefined
             }
         })
-            
-        return res.json({ status: "ok",  users: filteredUsers  })
+
+        return res.json({ status: "ok", users: filteredUsers })
     }
     catch (err) {
         console.log(err)
         return res.json({ status: "error", error: err })
     }
 
+})
+
+app.delete("/api/user/:id", async (req, res) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id)
+        return res.json({ status: "ok", user: { ...user, password: undefined } })
+    } catch (error) {
+        return res.json({ status: "error", error: error })
+    }
 })
 
 app.post("/api/user/profile", async (req, res) => {
@@ -106,7 +134,7 @@ app.post("/api/user/profile", async (req, res) => {
         user.profilePic = req.body.profilePic
 
         user.save()
-        return res.json({ status: "ok", user: { ...user,password:undefined } })
+        return res.json({ status: "ok", user: { ...user, password: undefined } })
     }
     catch (err) {
         console.log(err)
