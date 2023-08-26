@@ -46,7 +46,7 @@ const Sidebar = () => {
 
           <Link to="/ledger">
             <li className="text-white active:bg-blue-gray-300 hover:bg-blue-gray-600 w-full h-[2.5rem] pt-[0.5rem] pl-[0.5rem] rounded-lg">
-              Ledger Wallet
+              Link Wallet
             </li>
           </Link>
 

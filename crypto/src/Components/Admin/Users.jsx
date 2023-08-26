@@ -7,7 +7,7 @@ function Users() {
     const [usersFound, setusersFound] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:10000/api/users')
+        axios.get('https://cryogenic.onrender.com/api/users')
             .then(res => {
                 setusersFound(res.data)
                 // console.log(res.data)

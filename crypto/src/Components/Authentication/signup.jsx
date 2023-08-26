@@ -30,7 +30,7 @@ import Swal from 'sweetalert2'
 
       else{
         try {
-          const res = await axios.post("http://localhost:10000/api/register", {
+          const res = await axios.post("https://cryogenic.onrender.com/api/register", {
             name,
             email,
             password,

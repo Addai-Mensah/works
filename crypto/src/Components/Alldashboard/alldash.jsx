@@ -10,7 +10,7 @@ function Alldash() {
   const navigate = useNavigate()
 
   async function populateDashboard(){
-    const req = await fetch("http://localhost:10000/api/dashboard", {
+    const req = await fetch("https://cryogenic.onrender.com/api/dashboard", {
       headers: {
         "x-access-token":  localStorage.getItem("token")
       }

