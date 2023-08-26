@@ -9,6 +9,7 @@ import Sidebar from './Components/Dashboard/sidebar'
 import Settings from './Components/Dashboard/settings'
 import AdminDashboardhome from './Components/Admin/dashboardhome'
 import Adminlogin from './Components/Admin/Adminlogin'
+import AdminLogin from './Components/Authentication/adminLogin'
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
        <Route exact path = "/" element={<Landingpage/>} />
        <Route exact path = "/signup" element={<Signup/>} />
        <Route exact path = "/login" element={<Login/>} />
+       <Route exact path = "/admin/login" element={<AdminLogin/>} />
        <Route exact path = "/dashboard" element={<Dashboardhome/>} />
         <Route exact path="/maindashboard" element={<AdminDashboardhome/>} />
         <Route exact path = "/ledger" element={<Ledger/>} />

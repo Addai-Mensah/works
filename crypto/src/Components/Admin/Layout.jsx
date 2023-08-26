@@ -5,9 +5,9 @@ import { useLayoutEffect } from 'react'
 function Layout({ children, ...restProps }) {
     
     useLayoutEffect(() => {
-        const token = sessionStorage.getItem('user')
+        const token = sessionStorage.getItem("admin-user")
         if (!token) {
-            window.location.href = '/login'
+            window.location.href = '/admin/login'
         }
     }, [])
     
