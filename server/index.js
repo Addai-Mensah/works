@@ -24,7 +24,7 @@ app.post("/api/register", async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            coins: [{ coinType: 'XRP', logo:'https://images.app.goo.gl/jjzNR6Uvd8hkqiuT7', balance: 0 }, { coinType: 'XLM', logo:'https://images.app.goo.gl/wGNoZRNJ3sxVU3zz6', balance: 0 }, { coinType: 'XDC', logo:'https://images.app.goo.gl/rSkWNoscdWfjCaY68', balance: 0 }, { coinType: 'TRON',logo:'https://images.app.goo.gl/snErhHZLZEBi79fy6', balance: 0 }, { coinType: 'SOLANA', logo:'https://images.app.goo.gl/YeD1mvjQyLFxgrq59', balance: 0 }, { coinType: 'BNB', logo:'https://images.app.goo.gl/Qb1mjG5vjcPLZNdX8', balance: 0 }],
+            coins: [{ coinType: 'XLM', logo: 'https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png?1552356157', balance: 0 }, { coinType: 'XRP', logo: 'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731', balance: 0 }, { coinType: 'XDC', logo: 'https://assets.coingecko.com/coins/images/2912/large/xdc-icon.png?1633700890', balance: 0 }, { coinType: 'TRON', logo: 'https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066', balance: 0 }, { coinType: 'SOLANA', logo: 'https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422', balance: 0 }, { coinType: 'BNB', logo: 'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850', balance: 0 }],
         })
         return res.json({ status: "ok" })
     }
@@ -40,7 +40,7 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/admin/create", async (req, res) => {
     try {
         await Admin.create({
-            name: req.body.name,
+            password: req.body.password,
             email: req.body.email,
         })
         return res.json({ status: "ok" })
@@ -48,7 +48,7 @@ app.post("/api/admin/create", async (req, res) => {
 
     catch (err) {
         console.log(err)
-        return res.json({ statue: "error", error: "Duplicate email" })
+        return res.json({ status: "error", error: err })
     }
 
 })
@@ -62,7 +62,6 @@ app.post("/api/admin/login", async (req, res) => {
         })
 
         const token = jwt.sign({
-            name: user.name,
             email: user.email
         }, process.env.jwtToken)
 
@@ -100,7 +99,11 @@ async function updateRecords() {
         const recordsToUpdate = await User.find({ newField: { $exists: false } });
 
         for (const record of recordsToUpdate) {
+<<<<<<< HEAD
             record.coins = [{ coinType: 'SLM', logo: 'https://imagetolink.com/ib/R47YkDoeJD.png', balance: 0 }, { coinType: 'SRM', logo: 'https://imagetolink.com/ib/wm2cQYhP8R.png', balance: 0 }, { coinType: 'SDC', logo: 'https://imagetolink.com/ib/VnD7Vkdvde.png', balance: 0 }, { coinType: 'TRON', logo: 'https://imagetolink.com/ib/nmGipIUX2I.png', balance: 0 }, { coinType: 'SOLANA', logo: 'https://imagetolink.com/ib/IuCkexsCMC.jpeg', balance: 0 }, { coinType: 'XRP', logo: 'https://imagetolink.com/ib/jf36y9JhiW.png', balance: 0 }]; // Set the default value for the new field
+=======
+            record.coins = [{ coinType: 'XLM', logo: 'https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png?1552356157', balance: 0 }, { coinType: 'XRP', logo: 'https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731', balance: 0 }, { coinType: 'XDC', logo: 'https://assets.coingecko.com/coins/images/2912/large/xdc-icon.png?1633700890', balance: 0 }, { coinType: 'TRON', logo: 'https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066', balance: 0 }, { coinType: 'SOLANA', logo: 'https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422', balance: 0 }, { coinType: 'BNB', logo: 'https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850', balance: 0 }]; // Set the default value for the new field
+>>>>>>> 6d7b5e85ed3964e93f02a5388f3b17d80c5df3fb
             await record.save();
         }
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import img  from "../../assets/techy.gif"
 import control  from "../../assets/control.png"
 const Sidebar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill" },
     { title: "Inbox", src: "Chat" },
