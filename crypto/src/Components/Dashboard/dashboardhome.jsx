@@ -21,7 +21,7 @@ function Dashboardhome() {
                      user?._doc?.coins?.map((item) => (
                         <div className='col-span-1 border-2 boxshadow  h-[8rem] flex  items-center '>
                            <div className='flex gap-4  items-center justify-center ml-[1rem]'>
-                              <img src={item.logo} alt="logo" />
+                              <img src={item.logo} className='w-[3rem]' alt="logo" />
                               <div>
                                  <h1 className='text-[#00000090] text-[1rem] font-bold'>{item?.coinType}</h1>
                                  <h1 className='text-[#00000090] text-center font-bold'>Balance  : ${item?.balance}</h1>
