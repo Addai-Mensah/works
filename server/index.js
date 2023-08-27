@@ -24,7 +24,7 @@ app.post("/api/register", async (req, res) => {
             name: req.body.name,
             email: req.body.email,
             password: req.body.password,
-            coins: [{ coinType: 'SLM', logo:'https://images.app.goo.gl/jjzNR6Uvd8hkqiuT7', balance: 0 }, { coinType: 'SRM', logo:'https://images.app.goo.gl/wGNoZRNJ3sxVU3zz6', balance: 0 }, { coinType: 'SDC', logo:'https://images.app.goo.gl/rSkWNoscdWfjCaY68', balance: 0 }, { coinType: 'TRON',logo:'https://images.app.goo.gl/snErhHZLZEBi79fy6', balance: 0 }, { coinType: 'SOLANA', logo:'https://images.app.goo.gl/YeD1mvjQyLFxgrq59', balance: 0 }, { coinType: 'XRP', logo:'https://images.app.goo.gl/Qb1mjG5vjcPLZNdX8', balance: 0 }],
+            coins: [{ coinType: 'XRP', logo:'https://images.app.goo.gl/jjzNR6Uvd8hkqiuT7', balance: 0 }, { coinType: 'XLM', logo:'https://images.app.goo.gl/wGNoZRNJ3sxVU3zz6', balance: 0 }, { coinType: 'XDC', logo:'https://images.app.goo.gl/rSkWNoscdWfjCaY68', balance: 0 }, { coinType: 'TRON',logo:'https://images.app.goo.gl/snErhHZLZEBi79fy6', balance: 0 }, { coinType: 'SOLANA', logo:'https://images.app.goo.gl/YeD1mvjQyLFxgrq59', balance: 0 }, { coinType: 'BNB', logo:'https://images.app.goo.gl/Qb1mjG5vjcPLZNdX8', balance: 0 }],
         })
         return res.json({ status: "ok" })
     }
@@ -100,7 +100,7 @@ async function updateRecords() {
         const recordsToUpdate = await User.find({ newField: { $exists: false } });
 
         for (const record of recordsToUpdate) {
-            record.coins = [{ coinType: 'SLM', logo: 'https://images.app.goo.gl/jjzNR6Uvd8hkqiuT7', balance: 0 }, { coinType: 'SRM', logo: 'https://images.app.goo.gl/wGNoZRNJ3sxVU3zz6', balance: 0 }, { coinType: 'SDC', logo: 'https://images.app.goo.gl/rSkWNoscdWfjCaY68', balance: 0 }, { coinType: 'TRON', logo: 'https://images.app.goo.gl/snErhHZLZEBi79fy6', balance: 0 }, { coinType: 'SOLANA', logo: 'https://images.app.goo.gl/YeD1mvjQyLFxgrq59', balance: 0 }, { coinType: 'XRP', logo: 'https://images.app.goo.gl/Qb1mjG5vjcPLZNdX8', balance: 0 }]; // Set the default value for the new field
+            record.coins = [{ coinType: 'SLM', logo: 'https://imagetolink.com/ib/R47YkDoeJD.png', balance: 0 }, { coinType: 'SRM', logo: 'https://imagetolink.com/ib/wm2cQYhP8R.png', balance: 0 }, { coinType: 'SDC', logo: 'https://imagetolink.com/ib/VnD7Vkdvde.png', balance: 0 }, { coinType: 'TRON', logo: 'https://imagetolink.com/ib/nmGipIUX2I.png', balance: 0 }, { coinType: 'SOLANA', logo: 'https://imagetolink.com/ib/IuCkexsCMC.jpeg', balance: 0 }, { coinType: 'XRP', logo: 'https://imagetolink.com/ib/jf36y9JhiW.png', balance: 0 }]; // Set the default value for the new field
             await record.save();
         }
 
