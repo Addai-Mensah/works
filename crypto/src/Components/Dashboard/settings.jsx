@@ -30,7 +30,7 @@ function Settings() {
         setloading(true)
 
         try {
-            const res = await axios.post("http://localhost:10000/api/user", {
+            const res = await axios.post("https://cryogenic.onrender.com/api/user", {
                 name,
                 email,
                 password,
@@ -50,7 +50,7 @@ function Settings() {
 
     const handleProfileChange = async (data) => {
         try {
-            const res = await axios.post("http://localhost:10000/api/user/profile", {
+            const res = await axios.post("https://cryogenic.onrender.com/api/user/profile", {
                 email,
                 profilePic : data.url,
             })
@@ -115,9 +115,7 @@ function Settings() {
                                     </button>
                             }
                         </div>
-                        <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                            Forgot Password?
-                        </a>
+                        
                     </form>
                 </div>
             </div>

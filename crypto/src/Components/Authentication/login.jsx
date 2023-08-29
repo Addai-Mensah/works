@@ -17,6 +17,7 @@ function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState(false);
+  
 
 
   async function loginUser(event) {
@@ -27,7 +28,7 @@ function Login() {
     }
 
    
-    const response = await fetch("http://localhost:10000/api/login", {
+    const response = await fetch("https://cryogenic.onrender.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -63,9 +64,13 @@ function Login() {
     <div>
       <div className=" flex items-center md:flex-row flex-col ">
         <div className=" md:w-2/4 w-full h-[50vh] md:h-[100vh] bg-no-repeat block md:hidden" style={{ backgroundImage: `url(${abstract})` }}>
+          <h1 className='text-white flex items-center justify text-[1.5rem] text-center mt-[7rem]'>Unlock the Future of Wealth With Decent Nano Ledger</h1>
+          <h3 className='text-white text-center'>Tokenize success, optimize returns</h3>
         </div>
 
         <div className=" md:w-2/4 w-full h-[50vh] md:h-[100vh] bg-no-repeat md:block hidden" style={{ backgroundImage: `url(${background})` }}>
+        <h1 className='text-white  text-[1.7rem] mt-[20rem] ml-[5rem] w-[20rem]'>Unlock the Future of Wealth With Decent Nano Ledger</h1>
+          <h3 className='text-white text-[1rem] ml-[5rem] '>Tokenize success, optimize returns</h3>
         </div>
 
 

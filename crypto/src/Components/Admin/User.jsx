@@ -5,7 +5,7 @@ function User({ users, }) {
     const handleDeleteUser = () => {
         if (confirm("Are you sure you want to delete this user?")) {
             console.log(users._doc._id)
-            axios.delete(`http://localhost:10000/api/user/${users._doc._id}`)
+            axios.delete(`https://cryogenic.onrender.com/api/user/${users._doc._id}`)
                 .then(res => {
                     // console.log(res.data)
                     alert('user deleted')
@@ -33,7 +33,7 @@ function User({ users, }) {
 
     const updateUserBalance = () => {
         // console.log('pressed')
-        axios.put(`http://localhost:10000/api/coins/${users._doc._id}`, { coins: coins })
+        axios.put(`https://cryogenic.onrender.com/api/coins/${users._doc._id}`, { coins: coins })
             .then(res => {
                 console.log(res.data)
                 alert('user updated')

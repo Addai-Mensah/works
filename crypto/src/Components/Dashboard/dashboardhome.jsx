@@ -6,7 +6,6 @@ import Head from './head'
 import Dashboardtable from './dashboardtable'
 import Transaction from './transaction'
 import Layout from './Layout'
-import axios from 'axios'
 
 function Dashboardhome() {
 
@@ -33,7 +32,7 @@ function Dashboardhome() {
       <Layout>
          <div>
             <Head />
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
+            {/* <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
                {
                   user?._doc?.coins?.length > 0 ?
                      user?._doc?.coins?.map((item) => (
@@ -52,7 +51,7 @@ function Dashboardhome() {
                }
 
 
-
+            
             </div>
             {/* <Transaction /> */}
             <Dashboardtable />

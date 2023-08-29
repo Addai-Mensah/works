@@ -7,13 +7,13 @@ import bye from "../../assets/goodby.png"
 function Security() {
   return (
     <div>
-       <div className='flex max-[300px]:ml-[14rem] ml-[1rem] md:mt-[3rem] mt-[5rem] gap-20  md:flex-row flex-col-reverse mb-[7rem]'>
-            <img className='md:w-[40vw] w-[13rem] ml-[5rem] ' src={bye} alt="" />
+       <div className='flex max-[300px]:ml-[14rem] ml-[1rem] md:mt-[5rem] mt-[5rem] gap-20  md:flex-row flex-col-reverse mb-[7rem]'>
+            <img className='md:w-[40vw] object-contain mx-auto md:pl-[3rem]' src={bye} alt="" />
 
             <div className='  '>
                 <div>
-                <p className='md:text-[3rem] leading-14 md:w-[35rem]  text-[2rem]  md:mt-[4rem] '> Say goodby to complicated statements</p>
-<p className='md:w-[25rem] md:mt-[2rem] mt-[1rem] text-[1.2rem] '>Easy to read account statements that let you keep track of your investments. We  make everything easy for you!</p> 
+                <p className='md:text-[3rem]  leading-14 md:w-[35rem]  text-[1.5rem]  md:mt-[4rem] '> Say goodby to complicated statements</p>
+             <p className='md:w-[25rem] md:mt-[2rem] mt-[1rem] text-[0.9rem] '>Easy to read account statements that let you keep track of your investments. We  make everything easy for you!</p> 
                 </div>
             </div>
         </div>
