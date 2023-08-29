@@ -91,6 +91,22 @@ app.put("/api/coins/:id", async (req, res) => {
 }
 )
 
+//return a users coins list
+
+app.get("/api/user/coins/:id", async (req, res) => {
+    try {
+
+        const user = await User.findById(req.params.id)
+
+        return res.json({ status: "ok", coins: user.coins })
+    }
+    catch (err) {
+        console.log(err)
+        return res.json({ status: "error", error: err })
+    }
+
+})
+
 
 
 // Update existing records to include the new field
